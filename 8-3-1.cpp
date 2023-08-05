@@ -3,6 +3,9 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <ctime>
+#include <climits>
+#include <cctype>
 
 using namespace std;
 
@@ -491,7 +494,7 @@ int main()
     return 0;
 } */
 
-//choices.cpp -- array variations
+// choices.cpp -- array variations
 /* int main()
 {
     using namespace std;
@@ -526,7 +529,7 @@ int main()
     return 0;
 } */
 
-//num_test.cpp -- use numeric test in for loop
+// num_test.cpp -- use numeric test in for loop
 /* int main()
 {
     using namespace std;
@@ -540,7 +543,7 @@ int main()
     return 0;
 } */
 
-//express.cpp -- values of expressions 
+// express.cpp -- values of expressions
 /* int main()
 {
     using namespace std;
@@ -560,7 +563,7 @@ int main()
     return 0;
 } */
 
-//formore.cpp -- more looping with for
+// formore.cpp -- more looping with for
 /* const int arsize = 21;
 int main()
 {
@@ -573,7 +576,7 @@ int main()
     return 0;
 } */
 
-//bigstep.cpp -- count as directed
+// bigstep.cpp -- count as directed
 /* int main()
 {
     using std::cin;
@@ -588,7 +591,7 @@ int main()
     return 0;
 } */
 
-//forstr1.cpp -- using for with a string
+// forstr1.cpp -- using for with a string
 /* int main()
 {
     using namespace std;
@@ -601,7 +604,7 @@ int main()
     return 0;
 } */
 
-//plus_one.cpp -- the increment operator
+// plus_one.cpp -- the increment operator
 /* int main()
 {
     using std::cout;
@@ -613,7 +616,7 @@ int main()
     return 0;
 } */
 
-//block.cpp -- use a block statement
+// block.cpp -- use a block statement
 /* int main()
 {
     using namespace std;
@@ -635,7 +638,7 @@ int main()
     return 0;
 } */
 
-//dorstr2.cpp -- reversing an array
+// dorstr2.cpp -- reversing an array
 /* int main()
 {
     using namespace std;
@@ -654,8 +657,8 @@ int main()
     return 0;
 } */
 
-//equal.cpp -- equality vs assignment
-int main()
+// equal.cpp -- equality vs assignment
+/* int main()
 {
     using namespace std;
     int quizscores[10]={20,20,20,20,20,19,20,18,20,20};
@@ -666,5 +669,332 @@ int main()
     cout << "Doing it dangerously wrong:\n";
     for (i = 0; quizscores[i] = 20;i++)
         cout << "quiz " << i << " is a 20\n";
+    return 0;
+} */
+
+// compstr1.cpp -- comparing string using arrays
+/* int main()
+{
+    using namespace std;
+    char word[5] = "?ate";
+    for (char ch = 'a'; strcmp(word, "mate");ch++)
+    {
+        cout << word << endl;
+        word[0] = ch;
+    }
+    cout << "After loop ends,word is " << word << endl;
+    return 0;
+} */
+
+// compstr2.cpp -- comparing strings using arrays
+/* int main()
+{
+    using namespace std;
+    string word = "?ate";
+    for (char ch = 'a'; word != "mate";ch++)
+    {
+        cout << word << endl;
+        word[0] = ch;
+    }
+    cout << "After loop ends,word is " << word << endl;
+    return 0;
+} */
+
+// while.cpp -- introducing the while loop
+/* const int arsize = 20;
+int main()
+{
+    char name[arsize];
+    cout << "Your first name,please: ";
+    cin >> name;
+    cout << "Here is your name,verticalized and ASCIIized:\n";
+    int i = 0;
+    while(name[i]!='\0')
+    {
+        cout << name[i] << ": " << int(name[i]) << endl;
+        i++;
+    }
+    return 0;
+} */
+
+// waiting.cpp -- using clock() in a time-delay loop
+/* int main()
+{
+    cout << "Enter the delay time, in seconds: ";
+    float secs;
+    cin >> secs;
+    clock_t delay = secs * CLOCKS_PER_SEC;
+
+    cout << "starting\a\n";
+    clock_t start = clock();
+    while(clock()-start<delay)
+        ;
+    cout << "done \a\n";
+    return 0;
+} */
+
+// dowhile.cpp -- exit-condition loop
+/* int main()
+{
+    int n;
+    cout << "Enter numbers in the range 1-10 to find ";
+    cout << "my favorite number\n";
+    do
+    {
+        cin >> n;
+    } while (n != 7);
+    cout << "Yes, 7 is my favorite.\n";
+    return 0;
+} */
+
+// tectin1.cpp -- reading chars with a while loop
+/* int main()
+{
+    char ch;
+    int count = 0;
+    cout << "Enter characters; enter # to quit:\n";
+    cin >> ch;
+    while(ch!='#')
+    {
+        cout << ch;
+        ++count;
+        cin >> ch;
+    }
+    cout << endl
+         << count << " characters read\n";
+    return 0;
+} */
+
+// textin2.cpp -- using cin.get(char)
+/* int main()
+{
+    char ch;
+    int count = 0;
+    cout << "Enter characters; enter # to quit:\n";
+    cin.get(ch);
+    while (ch != '#')
+    {
+        cout << ch;
+        ++count;
+        cin.get(ch);
+    }
+    cout << endl
+         << count << " characters read\n";
+    return 0;
+} */
+
+// textin3.cpp -- reading chars to end of file
+/* int main()
+{
+    char ch;
+    int count = 0;
+    cin.get(ch);
+    while(cin.fail()==false)//while(!cin.fail())
+    {
+        cout << ch;
+        ++count;
+        cin.get(ch);
+    }
+    cout << endl
+         << count << " characters read\n";
+    return 0;
+} */
+
+// textin4.cpp -- reading chars with cin.get()
+/* int main(void)
+{
+    int ch;
+    int count = 0;
+    while((ch=cin.get())!=EOF)
+    {
+        cout.put(char(ch));
+        ++count;
+    }
+    cout << endl
+         << count << " characters read\n";
+    return 0;
+} */
+
+// nested.cpp -- nested loops and 2-D array
+/* const int Cities = 5;
+const int Years = 4;
+int main()
+{
+    const char *cities[Cities] =
+        {
+            "Gribble City",
+            "Gribbletown",
+            "New Gribble",
+            "San Gribble",
+            "Gribble Vista"};
+
+    int maxtemps[Years][Cities] =
+        {
+            {96, 100, 87, 101, 105},
+            {96, 98, 91, 107, 104},
+            {97, 101, 93, 108, 107},
+            {98, 103, 95, 109, 108}};
+    cout << "Maximum temperatures for 2008 - 2011\n\n";
+    for (int city = 0; city < Cities;++city)
+    {
+        cout << cities[city] << ":\t";
+        for (int year = 0; year < Years; ++year)
+            cout << maxtemps[year][city] << "\t";
+        cout << endl;
+    }
+    return 0;
+} */
+
+// if.cpp -- using the if statement
+/* int main()
+{
+    using std::cin;
+    using std::cout;
+    char ch;
+    int spaces = 0;
+    int total = 0;
+    cin.get(ch);
+    while (ch != '.')
+    {
+        if (ch == ' ')
+            ++spaces;
+        ++total;
+        cin.get(ch);
+    }
+    cout << spaces << " spaces, " << total;
+    cout << " characters total in sentence\n";
+    return 0;
+} */
+
+// ifelseif.cpp -- using if else if else
+/* const int Fave = 27;
+int main()
+{
+    int n;
+    cout << "Enter a number in the range 1-100 to find ";
+    cout << "my favorite number: ";
+    do
+    {
+        cin >> n;
+        if(n<Fave)
+            cout << "Too low -- guess again: ";
+            else if(n>Fave)
+            cout << "Too high -- guess again: ";
+            else
+            cout << Fave << " is right!\n";
+    } while (n!=Fave);
+    return 0;
+} */
+
+// or.cpp -- using the logical OR operator
+/* int main()
+{
+    cout << "This program may reformat your hard disk\n"
+         << "and destroy all your data.\n"
+         << "Do you wish ti continue?<y/n>";
+    char ch;
+    cin >> ch;
+    if (ch == 'y' || ch == 'Y')
+        cout << "You were wared!\a\a\n";
+    else if (ch == 'n' || ch == 'N')
+        cout << "A wish choice ... bye\n";
+    else
+        cout << "That wasn't a y or n! Apparently you can't follow\ninstructions, so I'll trash your disk anyway.\a\a\a\n";
+    return 0;
+} */
+
+// and.cpp -- using the logical AND operator
+/* const int arsize = 6;
+int main()
+{
+    float naaq[arsize];
+    cout << "Enter the NAAQs (New Age Awareness Quotients) of\nyour neighbors. Program terminates when you make\n"
+         << arsize << " entries or enter a negative value.\n";
+    int i = 0;
+    float temp;
+    cout << "First value: ";
+    cin >> temp;
+    while (i < arsize && temp >= 0)
+    {
+        naaq[i] = temp;
+        ++i;
+        if (i < arsize)
+        {
+            cout << "Next value: ";
+            cin >> temp;
+        }
+    }
+    if (i == 0)
+        cout << "No data--bye\n";
+    else
+    {
+        cout << "Enter your NAAQ: ";
+        float you;
+        cin >> you;
+        int count = 0;
+        for (int j = 0; j < i; j++)
+            if (naaq[j] > you)
+                ++count;
+        cout << count;
+        cout << " of your neighbors have greater awareness of\nthe New Age than you do.\n";
+    }
+    return 0;
+}
+ */
+
+// more_and.cpp -- using the logical AND  operator
+/* const char *qualify[4] =
+    {
+        "10,000-meter race.\n",
+        "mud tug-of-war.\n",
+        "masters canoe jousting.\n",
+        "pie-throwing festival.\n"};
+int main()
+{
+    int age;
+    cout << "Enter your age in years: ";
+    cin >> age;
+    int index;
+    if (age > 17 && age < 35)
+        index = 0;
+    else if (age >= 35 && age < 50)
+        index = 1;
+    else if (age >= 50 && age < 65)
+        index = 2;
+    else
+        index = 3;
+    cout << "You qualify for the " << qualify[index];
+    return 0;
+} */
+
+// not.cpp -- using the not opertor
+/* bool is_int(double);
+int main()
+{
+    double num;
+    cout << "Yo, dude! Enter an integer value: ";
+    cin >> num;
+    while (!is_int(num))
+    {
+        cout << "Out of range -- please try aagain: ";
+        cin >> num;
+    }
+    int val = int(num);
+    cout << "You've entered the integer " << val << "\nBye\n";
+    return 0;
+}
+
+bool is_int(double x)
+{
+    if (x <= INT_MAX && x >= INT_MIN)
+        return true;
+    else
+        return false;
+} */
+
+//cctypes.cpp -- using the ctype.h library
+int main()
+{
+    cout << "Enter text for analysis, and tye @ to terminate input.\n";
     return 0;
 }
